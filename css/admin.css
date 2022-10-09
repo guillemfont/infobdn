@@ -1,0 +1,15 @@
+.taulaProf {
+    border: 1px solid #dcf4fa;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5%;
+    background-color: rgba(235, 236, 236, 0.137);
+    width: 1000px;
+}
+
+.taulaProf table, td, tr{
+    border: 1px solid #dcf4fa;
+    border-collapse: collapse;
+    text-align: center;
+}
