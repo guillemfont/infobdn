@@ -1,3 +1,5 @@
+<!-- Pagina principal d'inici de sessió  -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,20 +15,41 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
+
+    <!-- Enllaç a icones  -->
+    <script src="https://kit.fontawesome.com/ebca16e450.js" crossorigin="anonymous"></script>
+
 </head>
 <body background="img/fondo.jpg">
 
     <nav>
+                    
+        <img src="img/logo2.png" alt="" srcset="">
+
+        <div class="lista">
+
+            <li>
+                <ul><a href="admin/home-admin.php"><i class="fa-solid fa-house-user"></i></a></ul>
+            </li>
+            <li>
+                <ul><a href="#"><i class="fa-brands fa-blogger"></i></a></ul>
+            </li>
+            <li>
+                <ul><a href="../sortir.php"><i class="fa-solid fa-user-plus"></i></i></a></ul>
+            </li>
+        </div>
     </nav>
+    <hr>
+    <div class="menu"></div>
 
 
     <section>
-        <form action="validacio.php" method="post">
+        <form class="contingut" action="validacio.php" method="post">
     
             <img src="img/logo.png" alt="LOGO INFOBDN" srcset="">
 
              <select name="rang" id="rang">
-                 <option value="alumne" required>Alumne</option>
+                 <option value="alumne" required require>Alumne</option>
                 <option value="professor">Professor</option>
             </select>            
             
@@ -35,7 +58,10 @@
     
             <input id="buto" type="submit" value="ACCEDIR">
 
-            <p><a href="admin/log-admin.php" class="blanc">Admin</a></p>
+            <p>
+                <a href="admin/index-admin.php" class="blanc">Admin</a>
+                <a href="admin/index-admin.php" class="blanc">Registrar-se</a>
+            </p>
        
     
         </form> 
