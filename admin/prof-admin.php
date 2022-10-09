@@ -32,12 +32,15 @@
             <!-- Enllaç a icones  -->
             <script src="https://kit.fontawesome.com/ebca16e450.js" crossorigin="anonymous"></script>
 
+            <!-- Enllaç al script JavaScript -->
+            <script src="../script.js"></script>
+
         </head>
         <body background="../img/fondo.jpg">
 
             <nav>
                 
-                <a href="home-admin.php"><i class="fa-sharp fa-solid fa-arrow-left"></i></a>
+                <a href="prof-admin.php"><i class="fa-sharp fa-solid fa-arrow-left"></i></a>
                 
                 <div class="lista">
 
@@ -79,7 +82,6 @@
                         $resultat = mysqli_query($connexio, $sql);
 
                         while ($mostrar = mysqli_fetch_array($resultat)) {
-                            if ($mostrar['Actiu']) {
                                               
                         ?>
 
@@ -91,12 +93,13 @@
                             <td><?php echo $mostrar ['email'] ?></td>
                             <td><?php echo $mostrar ['titol_academic'] ?></td>
                             <td><?php echo $mostrar ['fotografia'] ?></td>
-                            <td>Editar</td>
+                            <td> <a href="editarProf-admin.php">Editar</a></td>
                             <td>Actiu</td>
-                            <td>Eliminar</td>
+
+                            <td><a href="eliminarProf-admin.php? dni=<?php echo $mostrar ['dni'] ?>"  onclick="return confirmElim()">Eliminar</a></td>
                         </tr>
                         <?php
-                        }
+                        
                          }
                         
                          ?>

@@ -40,10 +40,28 @@ function dadesProf($dni, $nom, $cognom, $email, $contrasenya, $titol){
     $connexio = mysqli_connect("localhost", "root", "", "infobdn"); // Connexió amb la BBDD
 
     $consulta = "INSERT INTO professors (dni, nom, cognoms, email, contrasenya, titol_academic) VALUES ('$dni','$nom','$cognom','$email', md5($contrasenya),'$titol')";
-    if ($connexio->query($consulta) === true) {
+    if ($connexio->query($consulta) == true) {
         echo "PROFESSOR AFEGIT";
+        header('Location: prof-admin.php');
     } else {
         die("Error al insertar les dades: ". $connexio->error);
+    }
+
+    
+}
+
+// Funció per eliminar professors 
+function elimProf($dni){
+
+    $connexio = mysqli_connect("localhost", "root", "", "infobdn"); // Connexió amb la BBDD
+
+    $consulta = "DELETE FROM professors where dni='$dni'";
+
+    if ($connexio->query($consulta) == true) {
+        echo "PROFESSOR ELIMINAT";
+        header('Location: prof-admin.php');
+    } else {
+        die("Error al eliminar les dades: ". $connexio->error);
     }
 
     
