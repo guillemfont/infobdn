@@ -37,7 +37,7 @@
 
             <nav>
                 
-                <a href="home-admin.php"><i class="fa-sharp fa-solid fa-arrow-left"></i></a>
+                <a href="prof-admin.php"><i class="fa-sharp fa-solid fa-arrow-left"></i></a>
                 
                 <div class="lista">
 
@@ -57,7 +57,7 @@
 
 
             <section>
-                <form class="contingut" action="afegirProf-admin.php" method="post">
+                <form class="contingut" action="afegirProf-admin.php" method="post" enctype="multipart/form-data">
                             
                     <input type="text" name="dni" id="dni" placeholder= "DNI" required>
                     <input type="text" name="nom" id="nom" placeholder= "Nom" required>
@@ -65,6 +65,7 @@
                     <input type="text" name="email" id="email" placeholder= "Correu electrònic" required>
                     <input type="password" name="contrasenya" id="contrasenya" placeholder= "Contrasenya" required>
                     <input type="text" name="titol" id="titol" placeholder= "Titol Acadèmic" required>
+                    <input type="file" name="imatge" id="imatge" required>
 
                     <input id="buto" type="submit" value="AFEGIR">
 
@@ -90,8 +91,10 @@
         if(isset($_POST['dni'])){
 
             include('funcions-admin.php');
+
+            $imatge = addslashes(file_get_contents($_FILES['imatge']['tmp_name']));
             
-            dadesProf($_POST['dni'], $_POST['nom'],$_POST['cognom'],$_POST['email'],$_POST['contrasenya'],$_POST['titol']);
+            dadesProf($_POST['dni'], $_POST['nom'],$_POST['cognom'],$_POST['email'],$_POST['contrasenya'],$_POST['titol'], $imatge);
 
 
 

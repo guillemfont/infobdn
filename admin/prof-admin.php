@@ -33,14 +33,14 @@
             <script src="https://kit.fontawesome.com/ebca16e450.js" crossorigin="anonymous"></script>
 
             <!-- Enllaç al script JavaScript -->
-            <script src="../script.js"></script>
+            <script src="../script/script.js"></script>
 
         </head>
         <body background="../img/fondo.jpg">
 
             <nav>
                 
-                <a href="prof-admin.php"><i class="fa-sharp fa-solid fa-arrow-left"></i></a>
+                <a href="home-admin.php"><i class="fa-sharp fa-solid fa-arrow-left"></i></a>
                 
                 <div class="lista">
 
@@ -61,18 +61,18 @@
 
             <section>
                 <div class="taulaProf">
-                    <a href="afegirProf-admin.php">AFEGIR</a>
+                    <a style="margin-bottom: 3%" href="afegirProf-admin.php"><i style="margin-right: 2%; font-size: 40px" class="fa-solid fa-user-plus"></i>Afegir nou professor</a>
                     <table>
                         <tr>
-                            <td>DNI</td>
-                            <td>Nom</td>
-                            <td>Cognoms</td>
-                            <td>Correu electrònic</td>
-                            <td>Titol Acadèmic</td>
-                            <td>Fotografía</td>
-                            <td>Editar</td>
-                            <td>Actiu</td>
-                            <td>Eliminar</td>
+                            <th>DNI</th>
+                            <th>Nom</th>
+                            <th>Cognoms</th>
+                            <th>Correu electrònic</th>
+                            <th>Titol Acadèmic</th>
+                            <th>Fotografía</th>
+                            <th>Editar</th>
+                            <th>Actiu</th>
+                            <th>Eliminar</th>
                         </tr>
                     
                         <?php
@@ -92,11 +92,10 @@
                             <td><?php echo $mostrar ['cognoms'] ?></td>
                             <td><?php echo $mostrar ['email'] ?></td>
                             <td><?php echo $mostrar ['titol_academic'] ?></td>
-                            <td><?php echo $mostrar ['fotografia'] ?></td>
-                            <td> <a href="editarProf-admin.php">Editar</a></td>
+                            <td><img src="data:image/jpg;base64,<?php echo base64_encode($mostrar ['fotografia']); ?>"/></td>
+                            <td> <a href="editarProf-admin.php"><i class="fa-solid fa-gear"></i></a></td>
                             <td>Actiu</td>
-
-                            <td><a href="eliminarProf-admin.php? dni=<?php echo $mostrar ['dni'] ?>"  onclick="return confirmElim()">Eliminar</a></td>
+                            <td><a href="eliminarProf-admin.php? dni=<?php echo $mostrar ['dni'] ?>"  onclick="return confirmElim()"><i class="fa-solid fa-trash"></i></a></td>
                         </tr>
                         <?php
                         

@@ -35,11 +35,11 @@ function validar($user, $pass) {
 }
 
 // Funció per afegir professors 
-function dadesProf($dni, $nom, $cognom, $email, $contrasenya, $titol){
+function dadesProf($dni, $nom, $cognom, $email, $contrasenya, $titol, $img){
 
     $connexio = mysqli_connect("localhost", "root", "", "infobdn"); // Connexió amb la BBDD
 
-    $consulta = "INSERT INTO professors (dni, nom, cognoms, email, contrasenya, titol_academic) VALUES ('$dni','$nom','$cognom','$email', md5($contrasenya),'$titol')";
+    $consulta = "INSERT INTO professors (dni, nom, cognoms, email, contrasenya, titol_academic, fotografia) VALUES ('$dni','$nom','$cognom','$email', md5($contrasenya),'$titol', '$img')";
     if ($connexio->query($consulta) == true) {
         echo "PROFESSOR AFEGIT";
         header('Location: prof-admin.php');
