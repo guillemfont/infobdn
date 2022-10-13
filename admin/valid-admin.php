@@ -1,14 +1,19 @@
 <?php
 
-$usuari = $_POST['usuari'];
-$contrasenya = $_POST['contrasenya'];
+if($_POST){
 
-include("funcions-admin.php");
+    error_reporting(0);
 
-
-if (validar($usuari, $contrasenya)){
-
-    session_start();
+    
+    $usuari = $_POST['usuari'];
+    $contrasenya = $_POST['contrasenya'];
+    
+    include("funcions-admin.php");
+    
+    
+    if (validar($usuari, $contrasenya)){
+        
+        session_start();
     $_SESSION['usuari']=$usuari;
 
     header("location:home-admin.php");
@@ -17,14 +22,20 @@ if (validar($usuari, $contrasenya)){
 else {
 
     include("index-admin.php")
+    
+?>
 
-    ?>
-
-    <h1>USUARI I/O CONTRASENYA INCORRECTES</h1>
-    <?php
+<h1>USUARI I/O CONTRASENYA INCORRECTES</h1>
+<?php
 
 }
+}
+else {
 
+    header("location:home-admin.php");
+    
+   
+}
 
 
 

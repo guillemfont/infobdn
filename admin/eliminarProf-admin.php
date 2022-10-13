@@ -17,10 +17,10 @@
         $dni = $_GET['dni'];
 
         if(elimProf($dni)){
-            header('location:index-admin.php');
+            header('location:prof-admin.php');
             echo ("yes");
         } else {
-            header('location:index-admin.php');
+            header('location:prof-admin.php');
             echo ("no");
         }
 
