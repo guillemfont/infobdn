@@ -10,6 +10,8 @@
 
     <!-- Enllaç al document CSS  -->
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/admin.css">
+
 
     <!-- Enllaç a les tipografies  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,7 +42,11 @@
         </div>
     </nav>
     <hr>
-    <div class="menu"></div>
+    <div id="menu" style="height: 100px"></div>
+
+    <div id="incorrecte" style="display: flex; justify-content: center;">
+        <p id="errorIn" style="color: white; display: flex; align-items: center; font-weight: 600; justify-content: center; display: none; font-size: 20px;">Usuari i/o contrasenya incorrecte</p>
+    </div>
 
 
     <section>

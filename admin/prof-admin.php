@@ -94,7 +94,7 @@
                             <td><?php echo $mostrar ['titol_academic'] ?></td>
                             <td><img src="data:image/jpg;base64,<?php echo base64_encode($mostrar ['fotografia']); ?>"/></td>
                             <td> <a href="editarProf-admin.php"><i class="fa-solid fa-gear"></i></a></td>
-                            <td>Actiu</td>
+                            <td><i class="fa-solid fa-check"></i></td>
                             <td><a href="eliminarProf-admin.php? dni=<?php echo $mostrar ['dni'] ?>"  onclick="return confirmElim()"><i class="fa-solid fa-trash"></i></a></td>
                         </tr>
                         <?php

@@ -7,4 +7,3 @@ function confirmElim(){ //Confirmar eliminació d'usuari
         return false;
     }
 }
-

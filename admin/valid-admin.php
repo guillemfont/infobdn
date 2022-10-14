@@ -24,8 +24,15 @@ else {
     include("index-admin.php")
     
 ?>
-
-<h1>USUARI I/O CONTRASENYA INCORRECTES</h1>
+    <script>
+        let incorrecte = document.getElementById('errorIn');
+        incorrecte.style.display = 'inline-block';
+        
+        
+        
+        // .style.display = "inline-block";
+        // document.getElementById(menu).style.height = "50px";
+    </script>
 <?php
 
 }
