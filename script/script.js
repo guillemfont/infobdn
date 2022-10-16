@@ -7,3 +7,23 @@ function confirmElim(){ //Confirmar eliminació d'usuari
         return false;
     }
 }
+
+function modificarProf(){ //Confirmar modificació de professor
+    let x = confirm("Estàs segur que vols guardar els canvis?");
+
+    if (x){
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function confirmEstat(){ //Confirmar convi d'estat d'usuari
+    let x = confirm("Estàs segur que vols canviar l'estat de l'usuari?");
+
+    if (x){
+        return true;
+    } else {
+        return false;
+    }
+}

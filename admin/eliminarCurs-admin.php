@@ -14,13 +14,13 @@
         include('prof-admin.php');
 
 
-        $dni = $_GET['dni'];
+        $codi = $_GET['codi'];
 
-        if(elimProf($dni)){
-            header('location:prof-admin.php');
+        if(elimCurs($codi)){
+            header('location:curs-admin.php');
             echo ("yes");
         } else {
-            header('location:prof-admin.php');
+            header('location:curs-admin.php');
             echo ("no");
         }
 

@@ -81,10 +81,12 @@
                     
                         <?php
 
+                        $buscar = $_POST['buscar'];
+
                         include('funcions-admin.php');
                         
                         $connexio = mysqli_connect("localhost", "root", "", "infobdn"); // Connexió amb la BBDD
-                        $sql = "SELECT * from professors";
+                        $sql = "SELECT * from professors WHERE nom like '$buscar' '%' order by dni desc";
                         $resultat = mysqli_query($connexio, $sql);
 
                         while ($mostrar = mysqli_fetch_array($resultat)) {
@@ -102,6 +104,7 @@
                             <td> <a href="editarProf-admin.php?dni=<?php echo $mostrar ['dni'] ?>"><i class="fa-solid fa-gear"></i></a></td>
                             <td><?php profActiu($mostrar ['actiu'], $mostrar ['dni']) ?></i></td>
                             <td><a href="eliminarProf-admin.php? dni=<?php echo $mostrar ['dni'] ?>"  onclick="return confirmElim()"><i class="fa-solid fa-trash"></i></a></td>
+
                         </tr>
                         <?php
                         
@@ -112,6 +115,8 @@
 
 
                     </table>
+                    <a style="text-align:center; margin-top:1%;" href="prof-admin.php">Tots els professors</a>
+
                 </div>
                  
             </section>

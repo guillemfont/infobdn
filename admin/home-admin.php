@@ -59,14 +59,14 @@
                     <a href=prof-admin.php>
                         <h1 style="text-align: center">Gestió de Professors</h1>
                         <br>
-                        <i class="fa-solid fa-user" style="font-size: 40px"><span style="font-size: 18px; margin-left: 30px">Mostrar, afegir i/o eliminar professors</span></i>
+                        <i class="fa-solid fa-user" style="font-size: 40px"><span style="font-size: 19px; margin-left: 30px">Mostrar, afegir i/o eliminar professors</span></i>
                     </a>
                 </div>
                 <div class="contingut" style="margin: 0 50px">
-                    <a href=prof-admin.php>
+                    <a href=curs-admin.php>
                         <h1 style="text-align: center">Gestió de Cursos</h1>
                         <br>
-                        <i class="fa-solid fa-book" style="font-size: 40px"></i>
+                        <i class="fa-solid fa-book" style="font-size: 40px"><span style="font-size: 19px; margin-left: 30px">Mostrar, afegir i/o eliminar cursos</i>
                     </a>
                 </div>
                  

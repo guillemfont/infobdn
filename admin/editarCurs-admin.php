@@ -7,8 +7,14 @@
         header('location:index-admin.php');
     }else{
 
-       
-        // Codi 
+        $codi = $_GET['codi'];
+
+        $connexio = mysqli_connect("localhost", "root", "", "infobdn"); // Connexió amb la BBDD
+        $sql = "SELECT * from cursos WHERE codi = '$codi'";
+        $resultat = mysqli_query($connexio, $sql);
+
+        $mostrar = mysqli_fetch_array($resultat);
+      
         ?>
         <!-- Pagina principal d'inici de sessió  -->
 
@@ -32,12 +38,16 @@
     <!-- Enllaç a icones  -->
     <script src="https://kit.fontawesome.com/ebca16e450.js" crossorigin="anonymous"></script>
 
+    <!-- Enllaç al script JavaScript -->
+    <script src="../script/script.js"></script>
+
+
 </head>
 <body background="../img/fondo.jpg">
 
     <nav>
         
-        <a href="prof-admin.php"><i class="fa-sharp fa-solid fa-arrow-left"></i></a>
+        <a href="curs-admin.php"><i class="fa-sharp fa-solid fa-arrow-left"></i></a>
         
         <div class="lista">
 
@@ -57,19 +67,19 @@
 
 
     <section>
-        <form class="contingut" action="afegirProf-admin.php" method="post" enctype="multipart/form-data">
+        <form class="contingut" action="edicioCurs-admin.php" method="post" enctype="multipart/form-data">
                     
-            <input type="text" name="dni" id="dni" placeholder= "DNI" required>
-            <input type="text" name="nom" id="nom" placeholder= "Nom" required>
-            <input type="text" name="cognom" id="cognom" placeholder= "Cognoms" required>
-            <input type="text" name="email" id="email" placeholder= "Correu electrònic" required>
-            <input type="password" name="contrasenya" id="contrasenya" placeholder= "Contrasenya" required>
-            <input type="text" name="titol" id="titol" placeholder= "Titol Acadèmic" required>
-            <input type="file" name="imatge" id="imatge" required>
+            <input type="text" name="codi" id="codi" value="<?=$codi?>" required readonly="readonly">
+            <input type="text" name="nom" id="nom" value="<?=$mostrar['nom']?>" required>
+            <input type="text" name="descripcio" id="descripcio" value="<?=$mostrar['descripcio']?>" required>
+            <input type="text" name="num_hores" id="num_Hores" value="<?=$mostrar['num_hores']?>" required>
+            <input type="text" name="data_inici" id="data_inici" value="<?=$mostrar['data_inici']?>" required>
+            <input type="text" name="data_final" id="data_final" value="<?=$mostrar['data_final']?>" required>
+            <input type="text" name="nom_professor" id="nom_professor" value="<?=$mostrar['nom_professor']?>" required readonly="readonly">
 
-            <input id="buto" type="submit" value="AFEGIR">
+            <input id="buto" type="submit" value="GUARDAR"  onclick="return modificarProf()"">
 
-            <p><a href="prof-admin.php" class="blanc">Veure els professors</a></p>
+            <p><a href="prof-admin.php" class="blanc">Veure els cursos</a></p>
 
 
         </form> 
@@ -88,17 +98,7 @@
 
         <?php
 
-        if(isset($_POST['dni'])){
-
-            include('funcions-admin.php');
-
-            $imatge = addslashes(file_get_contents($_FILES['imatge']['tmp_name']));
-            
-            dadesProf($_POST['dni'], $_POST['nom'],$_POST['cognom'],$_POST['email'],$_POST['contrasenya'],$_POST['titol'], $imatge);
-
-
-
-        }
+        
         
     }
 ?>

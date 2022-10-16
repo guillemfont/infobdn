@@ -37,7 +37,7 @@
 
     <nav>
         
-        <a href="prof-admin.php"><i class="fa-sharp fa-solid fa-arrow-left"></i></a>
+        <a href="curs-admin.php"><i class="fa-sharp fa-solid fa-arrow-left"></i></a>
         
         <div class="lista">
 
@@ -57,19 +57,18 @@
 
 
     <section>
-        <form class="contingut" action="afegirProf-admin.php" method="post" enctype="multipart/form-data">
+        <form class="contingut" action="afegirCurs-admin.php" method="post" enctype="multipart/form-data">
                     
-            <input type="text" name="dni" id="dni" placeholder= "DNI" required>
             <input type="text" name="nom" id="nom" placeholder= "Nom" required>
-            <input type="text" name="cognom" id="cognom" placeholder= "Cognoms" required>
-            <input type="text" name="email" id="email" placeholder= "Correu electrònic" required>
-            <input type="password" name="contrasenya" id="contrasenya" placeholder= "Contrasenya" required>
-            <input type="text" name="titol" id="titol" placeholder= "Titol Acadèmic" required>
-            <input type="file" name="imatge" id="imatge" required>
+            <input type="text" name="descripcio" id="descripcio" placeholder= "Descripció" required>
+            <input type="text" name="num_hores" id="num_hores" placeholder= "Número d'hores" required>
+            <input type="date" name="data_inici" id="data_inici" placeholder= "Data d'inici" required>
+            <input type="date" name="data_final" id="data_final" placeholder= "Data de final" required>
+            <input type="text" name="dni_prof" id="dni_prof" placeholder= "DNI del professor" required>
 
             <input id="buto" type="submit" value="AFEGIR">
 
-            <p><a href="prof-admin.php" class="blanc">Veure els professors</a></p>
+            <p><a href="curs-admin.php" class="blanc">Veure els cursos</a></p>
 
 
         </form> 
@@ -88,13 +87,12 @@
 
         <?php
 
-        if(isset($_POST['dni'])){
+        if(isset($_POST['nom'])){
 
             include('funcions-admin.php');
 
-            $imatge = addslashes(file_get_contents($_FILES['imatge']['tmp_name']));
             
-            dadesProf($_POST['dni'], $_POST['nom'],$_POST['cognom'],$_POST['email'],$_POST['contrasenya'],$_POST['titol'], $imatge);
+            dadesCurs($_POST['nom'], $_POST['descripcio'],$_POST['num_hores'],$_POST['data_inici'],$_POST['data_final'],$_POST['dni_prof']);
 
 
 
