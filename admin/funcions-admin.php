@@ -72,6 +72,8 @@ function elimProf($dni){
 
     $consulta = "DELETE FROM professors where dni='$dni'";
 
+    var_dump($consulta);
+
     if ($connexio->query($consulta) == true) {
         echo "PROFESSOR ELIMINAT";
         header('Location: prof-admin.php');

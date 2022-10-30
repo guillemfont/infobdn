@@ -11,7 +11,6 @@
               
         // Codi 
         include('funcions-admin.php');
-        include('prof-admin.php');
 
 
         $codi = $_GET['codi'];
