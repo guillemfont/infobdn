@@ -41,9 +41,13 @@
     </nav>
     <hr>
     <div class="menu"></div>
-
+    <div id="incorrecte" style="display: flex; justify-content: center;">
+        <p id="errorIn" style="color: white; display: flex; align-items: center; font-weight: 600; justify-content: center; display: none; font-size: 20px;">Usuari i/o contrasenya incorrecte</p>
+    </div>
+    <div style="height: 50px;"></div>
 
     <section>
+  
         <form class="contingut" action="validacio.php" method="post">
     
             <img src="img/logo.png" alt="LOGO INFOBDN" srcset="">
@@ -60,7 +64,7 @@
 
             <p>
                 <a href="admin/index-admin.php" class="blanc">Admin</a>
-                <a href="admin/index-admin.php" class="blanc">Registrar-se</a>
+                <a href="alumne/registre-alumne.php" class="blanc">Registrar-se</a>
             </p>
        
     
