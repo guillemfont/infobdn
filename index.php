@@ -29,7 +29,7 @@
         <div class="lista">
 
             <li>
-                <ul><a href="admin/home-admin.php"><i class="fa-solid fa-house-user"></i></a></ul>
+                <ul><a href="alumne/home-alumne.php"><i class="fa-solid fa-house-user"></i></a></ul>
             </li>
             <li>
                 <ul><a href="#"><i class="fa-brands fa-blogger"></i></a></ul>

@@ -65,6 +65,8 @@
             <input type="date" name="data_inici" id="data_inici" placeholder= "Data d'inici" required>
             <input type="date" name="data_final" id="data_final" placeholder= "Data de final" required>
             <input type="text" name="dni_prof" id="dni_prof" placeholder= "DNI del professor" required>
+            <input type="file" name="imatge" id="imatge" required>
+
 
             <input id="buto" type="submit" value="AFEGIR">
 
@@ -91,8 +93,9 @@
 
             include('funcions-admin.php');
 
+            $imatge = addslashes(file_get_contents($_FILES['imatge']['tmp_name']));
             
-            dadesCurs($_POST['nom'], $_POST['descripcio'],$_POST['num_hores'],$_POST['data_inici'],$_POST['data_final'],$_POST['dni_prof']);
+            dadesCurs($_POST['nom'], $_POST['descripcio'],$_POST['num_hores'],$_POST['data_inici'],$_POST['data_final'],$_POST['dni_prof'],$imatge);
 
 
 

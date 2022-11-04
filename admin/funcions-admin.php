@@ -50,11 +50,11 @@ function dadesProf($dni, $nom, $cognom, $email, $contrasenya, $titol, $img){
     
 }
 
-function dadesCurs($dni, $nom, $cognom, $email, $contrasenya, $titol){
+function dadesCurs($dni, $nom, $cognom, $email, $contrasenya, $titol, $img){
 
     $connexio = mysqli_connect("localhost", "root", "", "infobdn"); // Connexió amb la BBDD
 
-    $consulta = "INSERT INTO cursos (nom, descripcio, num_hores, data_inici, data_final, nom_professor) VALUES ('$dni','$nom','$cognom','$email', '$contrasenya','$titol')";
+    $consulta = "INSERT INTO cursos (nom, descripcio, num_hores, data_inici, data_final, nom_professor, fotografia) VALUES ('$dni','$nom','$cognom','$email', '$contrasenya','$titol', '$img')";
     if ($connexio->query($consulta) == true) {
         echo "PROFESSOR AFEGIT";
         header('Location: curs-admin.php');
