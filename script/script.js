@@ -27,3 +27,13 @@ function confirmEstat(){ //Confirmar convi d'estat d'usuari
         return false;
     }
 }
+
+function desmatricular(){ // Confirmar desmatrículació
+    let x = confirm('Estàs segur que vols desmatricular-te del curs?');
+    return x ?  true :  false;
+}
+
+function matricularAlumne(){ // Confirmar matriculació
+    let x = confirm('Estàs segur que vols matricularte-te al curs?');
+    return x ?  true :  false;
+}

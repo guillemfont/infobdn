@@ -46,10 +46,12 @@
 
     <section>
         <p style="color: white">No s'ha pogut completar el registre, aquest correu electrònic ja està en ús.</p>
+        <button id="buto"><a href="registre-alumne.php">Torna a intentar-ho</a></button>
+
     </section>
 
 
-    <footer>
+    <footer style="height: 400px;">
 
     </footer>
 

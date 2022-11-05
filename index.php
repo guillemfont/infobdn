@@ -35,7 +35,7 @@
                 <ul><a href="#"><i class="fa-brands fa-blogger"></i></a></ul>
             </li>
             <li>
-                <ul><a href="../sortir.php"><i class="fa-solid fa-user-plus"></i></i></a></ul>
+                <ul><a href="alumne/registre-alumne.php"><i class="fa-solid fa-user-plus"></i></i></a></ul>
             </li>
         </div>
     </nav>
@@ -72,7 +72,7 @@
     </section>
 
 
-    <footer>
+    <footer style="height: 100px;">
 
     </footer>
 

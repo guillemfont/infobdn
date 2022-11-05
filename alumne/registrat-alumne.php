@@ -50,7 +50,7 @@
     </section>
 
 
-    <footer>
+    <footer style="height: 400px;">
 
     </footer>
 

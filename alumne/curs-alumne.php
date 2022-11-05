@@ -41,10 +41,9 @@ if (!isset($_SESSION['usuari'])) { // Comprovar que la sessió existeix
 
         <nav>
 
-            <a href="../index.php"><i class="fa-sharp fa-solid fa-arrow-left"></i></a>
+            <a href="home-alumne.php"><i class="fa-sharp fa-solid fa-arrow-left"></i></a>
 
             <div class="lista">
-
                 <li>
                     <ul><a href="notes-alumne.php"><i class="fa-solid fa-book"></i></a></ul>
                 </li>
@@ -60,21 +59,25 @@ if (!isset($_SESSION['usuari'])) { // Comprovar que la sessió existeix
             </div>
         </nav>
         <hr>
+        <div class="menu"></div>
 
 
-        <section id="seccioAlumne">
-            <div class="contingut" style="margin: 0 50px">
-                <h1>Els meus cursos</h1>
-                <?php mostrarCursos(); ?>
-            </div>
-            <div class="contingut" style="margin: 0 50px">
-                <h1>Cursos disponibles</h1>
-                <?php cursosDisponibles(); ?>
+        <section>
+            <div class="container" style="margin: 0 50px">
+                <?php
+                $codi = $_GET['codi'];
+
+                mostrarCursComplet($codi, 0);
+
+                ?>
             </div>
 
         </section>
 
 
+        <footer>
+
+        </footer>
 
 
 

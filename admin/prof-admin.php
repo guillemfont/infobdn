@@ -117,7 +117,7 @@
             </section>
 
 
-            <footer>
+            <footer style="height: 200px;">
 
             </footer>
 

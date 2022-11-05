@@ -79,7 +79,7 @@
 
             <input id="buto" type="submit" value="GUARDAR"  onclick="return modificarProf()"">
 
-            <p><a href="prof-admin.php" class="blanc">Veure els cursos</a></p>
+            <p><a href="curs-admin.php" class="blanc">Veure els cursos</a></p>
 
 
         </form> 
@@ -87,7 +87,7 @@
     </section>
 
 
-    <footer>
+    <footer style="height: 100px;">
 
     </footer>
 

@@ -46,7 +46,6 @@
     </nav>
     <hr>
     <div class="menu"></div>
-    <div class="menu"></div>
    
 
 
@@ -56,8 +55,7 @@
 
         <div id="incorrecte" style="display: flex; justify-content: center;">
         <p id="errorIn" style="color: white; display: flex; align-items: center; font-weight: 600; justify-content: center; display: none; font-size: 20px;">Les contrasenyes no coincideixen</p></div>
-    
-            <img src="../img/logo.png" alt="LOGO INFOBDN" srcset="">      
+      
             
             <input type="text" name="dni" id="dni" placeholder= "DNI" required> 
             <input type="text" name="nom" id="nom" placeholder="Nom" required>
@@ -79,7 +77,7 @@
     </section>
 
 
-    <footer>
+    <footer style="height: 100px;">
 
     </footer>
 

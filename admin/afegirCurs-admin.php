@@ -78,7 +78,7 @@
     </section>
 
 
-    <footer>
+    <footer style="height: 100px;">
 
     </footer>
 

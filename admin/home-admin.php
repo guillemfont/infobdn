@@ -1,5 +1,4 @@
 <?php
-// Pàgina 'home' de l'administrador
 
 
     session_start();
@@ -9,7 +8,6 @@
         
         // Codi 
         ?>
-        <!-- Pagina principal d'inici de sessió  -->
 
         <!DOCTYPE html>
         <html lang="en">
@@ -73,7 +71,7 @@
             </section>
 
 
-            <footer>
+            <footer style="height: 400px;">
 
             </footer>
 

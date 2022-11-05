@@ -40,7 +40,7 @@
 
             <nav>
                 
-                <a href="home-admin.php"><i class="fa-sharp fa-solid fa-arrow-left"></i></a>
+                <a href="curs-admin.php"><i class="fa-sharp fa-solid fa-arrow-left"></i></a>
                 
                 <div class="lista">
 
@@ -62,7 +62,7 @@
             <section>
                 <div class="taulaProf">
                 <form action="buscarCurs-admin.php" method="post" style="display:flex; justify-content: center;">
-                    <input type="text" name="buscar" id="buscar" placeholder="Buscar professor">
+                    <input type="text" name="buscar" id="buscar" placeholder="Buscar curs">
                     <input type="button" value="BUSCAR">
                 </form>
                     <a style="margin-bottom: 3%" href="afegirCurs-admin.php"><i style="margin-right: 2%; font-size: 40px" class="fa-solid fa-user-plus"></i>Afegir nou professor</a>
@@ -123,7 +123,7 @@
             </section>
 
 
-            <footer>
+            <footer style="height: 400px;">
 
             </footer>
 

@@ -1,11 +1,6 @@
-/* section {
-    display: flex;
-    flex-direction: column;
+.enllaç, .enllaç2 {
+  text-align: center;
 }
-
-.contingut {
-    width: 80%;
-} */
 
 .curs {
     padding-top: 20px;
@@ -23,7 +18,8 @@
       "data-inici inici"
       "data-final final"
       "hores-totals totals"
-      "enllaç enllaç"; 
+      "enllaç enllaç" 
+      "enllaç2 enllaç2"; 
   }
   .nom-curs { grid-area: nom-curs; }
   .descripcio-curs { grid-area: descripcio-curs; }
@@ -40,12 +36,63 @@
   .imatge { grid-area: imatge; } 
   .imatge { grid-area: imatge; } 
   .enllaç { grid-area: enllaç; } 
+  .enllaç2 { grid-area: enllaç2; } 
 
   /* .curs, .curs div {
     border: 1px solid white;
     border-collapse: collapse;
   } */
 
-.curs img {
+img {
     width: 20%;
+}
+
+.cursos{
+  border: 1px solid #dcf4fa;
+  margin: 10px 0;
+  border-radius: 5%;
+}
+
+.cursos .nom {
+  font-weight: bolder;
+  font-size: 18px;
+}
+
+#imatge{
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 60%;
+  border: 1px solid #dcf4fa;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5%;
+  background-color: rgba(235, 236, 236, 0.137);
+  color: rgb(223, 221, 221);
+}
+
+.curs div {
+  padding: 5px;
+}
+
+.nom-curs, .descripcio-curs, .nom-prof, .data-inici, .data-final, .hores-totals{
+  font-weight: bold;
+  margin-left: 20%;
+}
+
+.curs a {
+  text-decoration: underline;
+}
+
+#seccioAlumne{
+  margin-top: 5%;
+  align-items: flex-start;
+}
+
+.notes:hover {
+  color: rgba(235, 236, 236, 0.63);
+
 }
