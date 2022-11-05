@@ -1,5 +1,5 @@
 <?php
-// Pàgina 'home' de l'administrador
+// Pàgina 'edició curs' de l'administrador
 
 
     session_start();

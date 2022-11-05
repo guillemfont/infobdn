@@ -1,5 +1,5 @@
 <?php
-
+// Desmatricular alumne del curs
 
 
 session_start();

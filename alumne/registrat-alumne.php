@@ -1,7 +1,6 @@
-<!-- Pagina principal d'inici de sessió  -->
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,12 +19,13 @@
     <script src="https://kit.fontawesome.com/ebca16e450.js" crossorigin="anonymous"></script>
 
 </head>
+
 <body background="../img/fondo.jpg">
 
-<nav>
-        
+    <nav>
+
         <a href="registre-alumne.php"><i class="fa-sharp fa-solid fa-arrow-left"></i></a>
-        
+
         <div class="lista">
 
             <li>
@@ -33,9 +33,6 @@
             </li>
             <li>
                 <ul><a href="#"><i class="fa-brands fa-blogger"></i></a></ul>
-            </li>
-            <li>
-                <ul><a href="../sortir.php"><i class="fa-solid fa-right-from-bracket"></i></a></ul>
             </li>
         </div>
     </nav>
@@ -45,7 +42,7 @@
 
 
     <section>
-        <p style="color: white">Usuari registrat amb èxit, pots iniciar sessió fent   </p>
+        <p style="color: white">Usuari registrat amb èxit, pots iniciar sessió fent </p>
         <button id="buto"><a href="../index.php">CLICK AQUÍ</a></button>
     </section>
 
@@ -57,4 +54,5 @@
 
 
 </body>
+
 </html>

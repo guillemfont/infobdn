@@ -1,5 +1,5 @@
 <?php
-// Pàgina 'home' de l'administrador
+// Pàgina 'home' de l'alumne
 
 
 session_start();
@@ -9,7 +9,7 @@ if (!isset($_SESSION['usuari'])) { // Comprovar que la sessió existeix
     include("funcions-alumne.php");
     // Codi 
 ?>
-    <!-- Pagina principal d'inici de sessió  -->
+    <!-- Pagina principal usuari alumne  -->
 
     <!DOCTYPE html>
     <html lang="en">
@@ -41,7 +41,7 @@ if (!isset($_SESSION['usuari'])) { // Comprovar que la sessió existeix
 
         <nav>
 
-            <a href="../index.php"><i class="fa-sharp fa-solid fa-arrow-left"></i></a>
+            <a href="../sortir.php" onclick="return confirmarTancarSessio()"><i class="fa-sharp fa-solid fa-arrow-left"></i></a>
 
             <div class="lista">
 
@@ -55,7 +55,7 @@ if (!isset($_SESSION['usuari'])) { // Comprovar que la sessió existeix
                     <ul><a href="#"><i class="fa-brands fa-blogger"></i></a></ul>
                 </li>
                 <li>
-                    <ul><a href="../sortir.php"><i class="fa-solid fa-right-from-bracket"></i></a></ul>
+                    <ul><a href="../sortir.php" onclick="return confirmarTancarSessio()"><i class="fa-solid fa-right-from-bracket"></i></a></ul>
                 </li>
             </div>
         </nav>

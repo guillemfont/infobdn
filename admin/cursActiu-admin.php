@@ -1,5 +1,5 @@
 <?php
-// Pàgina 'home' de l'administrador
+// Pàgina per modificar l'estat d'un curs
 
     
 

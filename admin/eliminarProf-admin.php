@@ -1,7 +1,5 @@
 <?php
-// Pàgina 'home' de l'administrador
-
-    
+// Pàgina per eliminar professor   
 
     session_start();
     if (!isset($_SESSION['usuari'])) { // Comprovar que la sessió existeix
@@ -24,4 +22,3 @@
         }
 
     }
-?>

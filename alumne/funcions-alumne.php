@@ -1,5 +1,7 @@
 <?php
+// Funcions relaciones amb alumnes
 
+// Funció per registrar alumne
 function registrarAlumne($dni, $nom, $cognom, $contrasenya, $email, $edat, $fotografia)
 {
 
@@ -14,6 +16,7 @@ function registrarAlumne($dni, $nom, $cognom, $contrasenya, $email, $edat, $foto
     }
 }
 
+// Funció per validar inici de sessió alumne
 function validarAlumne($user, $pass)
 {
 
@@ -39,7 +42,7 @@ function validarAlumne($user, $pass)
     mysqli_close($connexio);
 }
 
-
+// Funció per obtenir dni de alumne
 function dniUsuari($nom)
 {
     $connexio = mysqli_connect("localhost", "root", "", "infobdn"); // Connexió amb la BBDD
@@ -54,7 +57,7 @@ function dniUsuari($nom)
     return $dni;
 }
 
-
+// Funció per mostrat totes les dades d'un curs
 function mostrarCursComplet($codi, $bool)
 {
 
@@ -118,6 +121,7 @@ function mostrarCursComplet($codi, $bool)
     }
 }
 
+// Funció per mostrar tots els cursos
 function mostrarCursos()
 {
 
@@ -150,7 +154,7 @@ function mostrarCursos()
                     <div class="enllaç"><a style="text-decoration: underline;" href="curs-alumne.php?codi=<?php echo $curs['codi'] ?>">Veure complet</a></div>
                     <div class="enllaç"><a onclick="return desmatricular()" style="text-decoration: underline;" href="desmatricular-alumne.php?email=<?php echo $_SESSION['usuari'] ?>&codi=<?php echo $curs['codi'] ?>">Desmatricular-me</a></div>
                 </div>
-                <a href="notes-alumne.php"><span  class="notes">Les meves notes</span> </a>
+                <a href="notes-alumne.php"><span class="notes">Les meves notes</span> </a>
             <?php
             }
         } else {
@@ -161,7 +165,7 @@ function mostrarCursos()
 }
 
 
-
+// Funció per cursos disponibles
 function cursosDisponibles()
 {
     $connexio = mysqli_connect("localhost", "root", "", "infobdn"); // Connexió amb la BBDD
@@ -174,42 +178,41 @@ function cursosDisponibles()
     if ($consulta) {
 
         $numLinies = mysqli_num_rows($consulta);
-        if ($numLinies != 0){
+        if ($numLinies != 0) {
 
-            
+
             for ($i = 0; $i < $numLinies; $i++) {
                 $curs = mysqli_fetch_assoc($consulta);
-                ?>
-            <div style="margin: 10px 0; border: 1px solid #dcf4fa; border-radius: 8%;">
-                <ul>
-                    <li style="font-weight:bold"><?php echo $curs['nom'] ?></li>
-                    <li><img src="data:image/jpg;base64,<?php echo base64_encode($curs['fotografia']); ?>" /></li>
-                    <li><a style="text-decoration: underline" href="matricula-alumne.php?curs=<?php echo $curs['codi'] ?>">Matricular-me</a></li>
-                </ul>
-            </div>
-            
-            <?php
+            ?>
+                <div style="margin: 10px 0; border: 1px solid #dcf4fa; border-radius: 8%;">
+                    <ul>
+                        <li style="font-weight:bold"><?php echo $curs['nom'] ?></li>
+                        <li><img src="data:image/jpg;base64,<?php echo base64_encode($curs['fotografia']); ?>" /></li>
+                        <li><a style="text-decoration: underline" href="matricula-alumne.php?curs=<?php echo $curs['codi'] ?>">Matricular-me</a></li>
+                    </ul>
+                </div>
+
+<?php
             }
-        }else {
+        } else {
             echo '<br/>';
             echo 'Actualment no hi han cursos disponibles.';
         }
-        
-        
     } else {
         echo mysqli_error($connexio);
         echo "Alguna cosa no funciona correctament";
     }
 }
 
-function nomProfessor($codiCurs){
-     
+// Funció per obtenir nom del professor d'un curs
+function nomProfessor($codiCurs)
+{
+
     $connexio = mysqli_connect("localhost", "root", "", "infobdn"); // Connexió amb la BBDD
     $consulta = mysqli_query($connexio, "SELECT nom_professor FROM cursos WHERE codi = '$codiCurs'");
     $dniProf = mysqli_fetch_array($consulta)[0];
-    
+
     $nom = mysqli_query($connexio, "SELECT nom FROM professors WHERE dni = '$dniProf'");
     $cognom = mysqli_query($connexio, "SELECT cognoms FROM professors WHERE dni = '$dniProf'");
-    return mysqli_fetch_array($nom)[0]. " ".mysqli_fetch_array($cognom)[0];
-
+    return mysqli_fetch_array($nom)[0] . " " . mysqli_fetch_array($cognom)[0];
 }

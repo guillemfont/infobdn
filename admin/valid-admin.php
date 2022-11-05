@@ -1,60 +1,53 @@
 <?php
+// Validació d'inici de sessió administrador
 
-if($_POST){
+if ($_POST) {
 
-    // error_reporting(0);
 
-    
     $usuari = $_POST['usuari'];
     $contrasenya = $_POST['contrasenya'];
-    
+
     include("funcions-admin.php");
-    
+
     try {
 
 
-        if (validar($usuari, $contrasenya)){
-            
+        if (validar($usuari, $contrasenya)) {
+
             session_start();
-            $_SESSION['usuari']=$usuari;
-            
+            $_SESSION['usuari'] = $usuari;
+
             header("location:home-admin.php");
-        }
-        else {
+        } else {
 
             include("index-admin.php")
-    
 
 
-    
+
+
 ?>
-    <script>
-        let incorrecte = document.getElementById('errorIn');
-        incorrecte.style.display = 'inline-block';
-        
-    </script>
-<?php
-}
-} catch (Exception $e){
+            <script>
+                let incorrecte = document.getElementById('errorIn');
+                incorrecte.style.display = 'inline-block';
+            </script>
+        <?php
+        }
+    } catch (Exception $e) {
 
-    include("index-admin.php");
-    echo $e;
-    
-?>
-    <script>
-        let incorrecte = document.getElementById('errorIn');
-        incorrecte.style.display = 'inline-block';
-        
-    </script>
+        include("index-admin.php");
+        echo $e;
+
+        ?>
+        <script>
+            let incorrecte = document.getElementById('errorIn');
+            incorrecte.style.display = 'inline-block';
+        </script>
 <?php
 
-}
-}
-else {
+    }
+} else {
 
     header("location:home-admin.php");
-    
-   
 }
 
 

@@ -1,5 +1,5 @@
 <?php
-
+// Matricular alumne a curs
 
 session_start();
 if (!isset($_SESSION['usuari'])) { // Comprovar que la sessió existeix
@@ -25,4 +25,3 @@ if (!isset($_SESSION['usuari'])) { // Comprovar que la sessió existeix
     }
 
 }
-?>

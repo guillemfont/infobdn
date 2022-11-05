@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,12 +23,13 @@
     <script src="https://kit.fontawesome.com/ebca16e450.js" crossorigin="anonymous"></script>
 
 </head>
+
 <body background="../img/fondo.jpg">
 
     <nav>
-                
+
         <a href="../index.php"><i class="fa-sharp fa-solid fa-arrow-left"></i></a>
-        
+
         <div class="lista">
 
             <li>
@@ -51,18 +53,18 @@
 
     <section>
         <form class="contingut" action="valid-admin.php" method="post">
-    
-            <img src="../img/logo.png" alt="LOGO INFOBDN" srcset="">    
-            
-            <input type="text" name="usuari" id="usuari" placeholder= "Nom d'usuari" required>
-            <input type="password" name="contrasenya" id="contrasenya" placeholder = "Contrasenya" required>
-    
+
+            <img src="../img/logo.png" alt="LOGO INFOBDN" srcset="">
+
+            <input type="text" name="usuari" id="usuari" placeholder="Nom d'usuari" required>
+            <input type="password" name="contrasenya" id="contrasenya" placeholder="Contrasenya" required>
+
             <input id="buto" type="submit" value="ACCEDIR">
 
             <p><a href="../index.php" class="blanc">Sóc Alumne/Professor</a></p>
-       
-    
-        </form> 
+
+
+        </form>
     </section>
 
 
@@ -73,4 +75,5 @@
 
 
 </body>
+
 </html>

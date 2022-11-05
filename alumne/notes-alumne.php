@@ -1,5 +1,5 @@
 <?php
-
+// Pàgina amb notes de l'alumne
 
 session_start();
 if (!isset($_SESSION['usuari'])) { // Comprovar que la sessió existeix
@@ -52,7 +52,7 @@ if (!isset($_SESSION['usuari'])) { // Comprovar que la sessió existeix
                     <ul><a href="#"><i class="fa-brands fa-blogger"></i></a></ul>
                 </li>
                 <li>
-                    <ul><a href="../sortir.php"><i class="fa-solid fa-right-from-bracket"></i></a></ul>
+                    <ul><a href="../sortir.php" onclick="return confirmarTancarSessio()"><i class="fa-solid fa-right-from-bracket"></i></a></ul>
                 </li>
             </div>
         </nav>
@@ -70,37 +70,37 @@ if (!isset($_SESSION['usuari'])) { // Comprovar que la sessió existeix
                     </tr>
 
                     <?php
-                          $connexio = mysqli_connect("localhost", "root", "", "infobdn"); // Connexió amb la BBDD
-                          $dni = dniUsuari($_SESSION['usuari']);
+                    $connexio = mysqli_connect("localhost", "root", "", "infobdn"); // Connexió amb la BBDD
+                    $dni = dniUsuari($_SESSION['usuari']);
 
-                          $sql1 = "SELECT * FROM matricula WHERE dni_alumne = '$dni' and nota != 'NULL'";
-                          $resultat1 = mysqli_query($connexio, $sql1);
-
-                          
-                          if ($resultat1){
-                              $numLineas1 = mysqli_num_rows($resultat1);
-                              $matricula = mysqli_fetch_assoc($resultat1);
-                              
-                              for ($i = 0; $i < $numLineas1; $i++){
-                                $codiMatricula = $matricula['codi_curs'];
-                                $sql2 = "SELECT nom FROM cursos WHERE codi = '$codiMatricula'";
-                                $resultat2 = mysqli_query($connexio, $sql2);
-                                $nomCurs = mysqli_fetch_array($resultat2)[0];
-                                $nomProf = nomProfessor($matricula['codi_curs']);
-                    
-
-                                echo "<tr>";
-                                echo "<td style='text-align: center'>$nomCurs</td>";
-                                echo "<td style='text-align: center'>$nomProf</td>";
-                                echo "<td style='text-align: center'>".$matricula['nota']."</td>";
-                                echo "</tr>";
-                            }
-                          }
-
-                          
+                    $sql1 = "SELECT * FROM matricula WHERE dni_alumne = '$dni' and nota != 'NULL'";
+                    $resultat1 = mysqli_query($connexio, $sql1);
 
 
-                ?>
+                    if ($resultat1) {
+                        $numLineas1 = mysqli_num_rows($resultat1);
+                        $matricula = mysqli_fetch_assoc($resultat1);
+
+                        for ($i = 0; $i < $numLineas1; $i++) {
+                            $codiMatricula = $matricula['codi_curs'];
+                            $sql2 = "SELECT nom FROM cursos WHERE codi = '$codiMatricula'";
+                            $resultat2 = mysqli_query($connexio, $sql2);
+                            $nomCurs = mysqli_fetch_array($resultat2)[0];
+                            $nomProf = nomProfessor($matricula['codi_curs']);
+
+
+                            echo "<tr>";
+                            echo "<td style='text-align: center'>$nomCurs</td>";
+                            echo "<td style='text-align: center'>$nomProf</td>";
+                            echo "<td style='text-align: center'>" . $matricula['nota'] . "</td>";
+                            echo "</tr>";
+                        }
+                    }
+
+
+
+
+                    ?>
                 </table>
                 <br>
                 <a style="text-align: center" href="home-alumne.php">Tots els cursos</a>

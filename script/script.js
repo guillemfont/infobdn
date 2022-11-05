@@ -1,3 +1,7 @@
+function sessio(){
+    return console.log('hola');
+}
+
 function confirmElim(){ //Confirmar eliminació d'usuari
     let x = confirm("Estàs segur que vols eliminar l'usuari?\n Aquesta acció no es pot revertir.");
 
@@ -36,4 +40,9 @@ function desmatricular(){ // Confirmar desmatrículació
 function matricularAlumne(){ // Confirmar matriculació
     let x = confirm('Estàs segur que vols matricularte-te al curs?');
     return x ?  true :  false;
+}
+
+function confirmarTancarSessio(){ // Confirmar tancament de sessió
+    let x = confirm('Estàs segur que vols tancar la sessió?');
+    return x ?  true : false;
 }
