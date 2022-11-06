@@ -65,9 +65,9 @@ if (!isset($_SESSION['usuari'])) { // Comprovar que la sessió existeix
                 <tr>
                     <th>Nom</th>
                     <th>Descripció</th>
+                    <th>Hores totals</th>
                     <th>Data inici</th>
                     <th>Data final</th>
-                    <th>Complet</th>
                     <th>Actiu</th>
                     <th>Imatge</th>
                 </tr>

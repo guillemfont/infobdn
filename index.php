@@ -24,7 +24,7 @@
 
     <nav>
                     
-        <img src="img/logo2.png" alt="" srcset="">
+        <img src="img/logo2.png" alt="LOGO INFO BDN" srcset="">
 
         <div class="lista">
 

@@ -79,21 +79,31 @@ if (!isset($_SESSION['usuari'])) { // Comprovar que la sessió existeix
 
                     if ($resultat1) {
                         $numLineas1 = mysqli_num_rows($resultat1);
-                        $matricula = mysqli_fetch_assoc($resultat1);
 
-                        for ($i = 0; $i < $numLineas1; $i++) {
-                            $codiMatricula = $matricula['codi_curs'];
-                            $sql2 = "SELECT nom FROM cursos WHERE codi = '$codiMatricula'";
-                            $resultat2 = mysqli_query($connexio, $sql2);
-                            $nomCurs = mysqli_fetch_array($resultat2)[0];
-                            $nomProf = nomProfessor($matricula['codi_curs']);
+                        if ($numLineas1 == 0) {
+                            echo "</table>";
+                            echo "<p style='text-align: center'>No ni han notes disponibles de cap curs.</p>";
+                        } else {
 
 
-                            echo "<tr>";
-                            echo "<td style='text-align: center'>$nomCurs</td>";
-                            echo "<td style='text-align: center'>$nomProf</td>";
-                            echo "<td style='text-align: center'>" . $matricula['nota'] . "</td>";
-                            echo "</tr>";
+                            $matricula = mysqli_fetch_assoc($resultat1);
+
+
+                            for ($i = 0; $i < $numLineas1; $i++) {
+                                $codiMatricula = $matricula['codi_curs'];
+                                $sql2 = "SELECT nom FROM cursos WHERE codi = '$codiMatricula'";
+                                $resultat2 = mysqli_query($connexio, $sql2);
+                                $nomCurs = mysqli_fetch_array($resultat2)[0];
+                                $nomProf = nomProfessor($matricula['codi_curs']);
+
+
+                                echo "<tr>";
+                                echo "<td style='text-align: center'>$nomCurs</td>";
+                                echo "<td style='text-align: center'>$nomProf</td>";
+                                echo "<td style='text-align: center'>" . $matricula['nota'] . "</td>";
+                                echo "</tr>";
+                                echo "</table>";
+                            }
                         }
                     }
 

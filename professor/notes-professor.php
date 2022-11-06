@@ -1,5 +1,5 @@
 <?php
-// Pàgina 'home' de l'administrador
+// Pàgina 'notes' del professor
 
 
 session_start();
@@ -9,8 +9,6 @@ if (!isset($_SESSION['usuari'])) { // Comprovar que la sessió existeix
     include("funcions-professor.php");
     // Codi 
 ?>
-    <!-- Pagina principal d'inici de sessió  -->
-
     <!DOCTYPE html>
     <html lang="en">
 
@@ -65,6 +63,7 @@ if (!isset($_SESSION['usuari'])) { // Comprovar que la sessió existeix
                 <tr>
                     <th>Alumne</th>
                     <th>Nota</th>
+                    <th>Modificar la nota</th>
                 </tr>
                 <?php
                 $codi = $_GET['codi'];
