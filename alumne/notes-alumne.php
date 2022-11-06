@@ -93,7 +93,7 @@ if (!isset($_SESSION['usuari'])) { // Comprovar que la sessió existeix
                                 $codiMatricula = $matricula['codi_curs'];
                                 $sql2 = "SELECT nom FROM cursos WHERE codi = '$codiMatricula'";
                                 $resultat2 = mysqli_query($connexio, $sql2);
-                                $nomCurs = mysqli_fetch_array($resultat2)[0];
+                                $nomCurs = mysqli_fetch_array($resultat2)['nom'];
                                 $nomProf = nomProfessor($matricula['codi_curs']);
 
 
@@ -102,8 +102,9 @@ if (!isset($_SESSION['usuari'])) { // Comprovar que la sessió existeix
                                 echo "<td style='text-align: center'>$nomProf</td>";
                                 echo "<td style='text-align: center'>" . $matricula['nota'] . "</td>";
                                 echo "</tr>";
-                                echo "</table>";
+                                
                             }
+                            echo "</table>";
                         }
                     }
 

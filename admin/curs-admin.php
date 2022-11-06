@@ -109,7 +109,7 @@ if (!isset($_SESSION['usuari'])) { // Comprovar que la sessió existeix
 
                             <td> <a href="editarCurs-admin.php?codi=<?php echo $mostrar['codi'] ?>"><i class="fa-solid fa-gear"></i></a></td>
                             <td><?php cursActiu($mostrar['actiu'], $mostrar['codi']) ?></i></td>
-                            <td><a href="eliminarCurs-admin.php? codi=<?php echo $mostrar['codi'] ?>" onclick="return confirmElim()"><i class="fa-solid fa-trash"></i></a></td>
+                            <td><a href="eliminarCurs-admin.php? codi=<?php echo $mostrar['codi'] ?>" onclick="return confirmElimCurs()"><i class="fa-solid fa-trash"></i></a></td>
                         </tr>
                     <?php
 
